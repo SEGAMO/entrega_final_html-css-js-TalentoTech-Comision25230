@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" lang="es" content="HTML,desarrollo,crear, ecommerce">
+    <meta name="Keywords" lang="en" content="HTML,development,build, ecommerce">
+    <meta name="description" content="HTML">
+    <meta name="author" content="SEGAMO">
+    <title>MiSitio-WEB</title>
+    <link rel="stylesheet" href="./style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./imag/logoimport1.png" alt="Logo de Mi Tienda" class="logo-img" loading="lazy">
+                <span class="site-title">Mi Tienda Online</span> 
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#productos_destacados">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#formulario">Asociate</a></li>
+                <li class="cart-icon-container">
+                    <a href="#" id="open-cart-btn">
+                        <img src="./imag/carrito.png" alt="Icono de carrito" class="cart-img" loading="lazy"> 
+                        (<span id="cart-count">0</span>)
+                    </a>
+                </li>   
+            </ul>
+            <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div id="cart-dropdown" class="cart-dropdown-content">
+            <h2>🛒 Carrito de Compra</h2>
+            <div id="items-carrito">
+                <p>El carrito está vacío.</p>
+            </div>
+            <p>Total: $<span id="total-carrito">0.00</span></p>
+            <button onclick="clearCart()">Vaciar Carrito</button>
+            <button>Finalizar Compra</button>
+        </div>
+
+    </header>
+
+    <main>
+        <aside id="sidebar-vacio">
+                <div id="imag-container-horizontal">
+                        <img src="./imag/fondoclima.webp" alt="clima"  loading="lazy">
+                        <div class="texto-clima" >
+                            <h1>Clima Actual</h1>
+                            <p id="temperatura">Cargando datos...<br>Pronóstico: Soleado</p> 
+                        </div>
+                </div>
+            <br>
+                <h1>Estamos en ...</h1>
+            <div class="map-responsive" id="mapa">
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26270.66943883035!2d-58.522718499999996!3d-34.608367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1764451738789!5m2!1ses-419!2sar" width="450" height="700" style="border:1px solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <hr>
+            <br>
+            <div class="form-container" id="formulario-contacto">
+                <h3>Asociate y disfrutá los Beneficios</h3>
+                <form action="https://formspree.io/f/mandqkyv" method="POST" autocomplete="on" id="formulario">
+                    <img src="./imag/socio.png" alt="socio"  loading="lazy">
+                    <label><b>Nombre: </b><input type="text" name="nombre" required></label><br>
+                    <br>
+                    <label><b>Correo: </b><input type="email" name="correo" required></label><br>
+                    <br>
+                    <label><b>Mensaje : </b><textarea name="message" rows="6" cols="35" required></textarea></label>
+                    <br><br>
+                    <button type="submit" id="enviar">Enviar</button>
+                    <br>
+                    <br>
+                    
+                   
+                </form>
+            </div>
+            <div class="defensa-consumidor-section">
+                        <h3>Defensa del Consumidor</h3>
+                        <a href="https://www.argentina.gob.ar/economia/industria-y-comercio/defensadelconsumidor" target="_blank" rel="noopener noreferrer" aria-label="Enlace a Defensa del Consumidor Argentina">
+                            <img src="./imag/defensa1.jpg" alt="Logo Defensa del Consumidor"  loading="lazy" class="logo-defensa-img">
+                        </a>
+                        <p>Haga clic en la imagen para realizar su reclamo.</p>
+            </div>
+                    
+                    <hr> 
+        </aside>
+
+        <div class="main-content-wrapper">
+            <section class="slider-container" id="main-slider">
+                <div class="slide">
+                    <img src="./imag/envios.jpg" alt="Oferta de Verano" loading="lazy">
+                    <div class="slide-content">
+                        <h2>¡Envios Gratis !!</h2>
+                        <p>En pedidos superiores a u$ 1000.00.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./imag/cuotas.jpg" alt="Nuevos Productos" loading="lazy">
+                    <div class="slide-content">
+                        <h2>Cuotas</h2>
+                        <p>Hasta 12 cuotas sin interes !!!.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./imag/mercadopago.webp" alt="Envío Gratis" loading="lazy">
+                     <div class="slide-content">
+                        <h2>Mercado Pago</h2>
+                        <p>Aceptamos Mercado Pago y Transferencia !!!.</p>
+                    </div>
+                </div>
+            </section>
+            <h1 class="section-title" id="productos_destacados">░░░░░░░░ Nuestros Productos Destacados ░░░░░░░░</h1>
+            <section class="product-grid-container">
+                
+                <!-- PRODUCTO 1 -->
+                <div class="product-card">
+                    <div class="gallery">
+                        <img src="./imag/casco1.jpg" alt="Imagen principal P1" class="main-image" id="mainImage1" loading="lazy">
+                        <div class="thumbnails">
+                            <img src="./imag/casco1.jpg" alt="P1 Thumbnail A" onclick="changeImage('mainImage1', './imag/casco1.jpg')" loading="lazy">
+                            <img src="./imag/casco2.jpg" alt="P1 Thumbnail B" onclick="changeImage('mainImage1', './imag/casco2.jpg')" loading="lazy">
+                            <img src="./imag/casco3.webp" alt="P1 Thumbnail C" onclick="changeImage('mainImage1', './imag/casco3.webp')" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1>Casco Iron Man</h1>
+                        <p class="price">u$ 499.99</p>
+                        <p>Casco Replica Iron Man </p>
+                        <a href="./pages/pages1/index1.html" target="top" class="btn-features" loading="lazy">Ver Características</a>
+                        <button onclick="addToCart({id: 1, name: 'Casco Iron man', price: 499.99, image: '../imag/casco1.jpg'})">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 2 -->
+                <div class="product-card">
+                    <div class="gallery">
+                        <img src="./imag/escudo1.webp" alt="Imagen principal P2" class="main-image" id="mainImage2" loading="lazy">
+                        <div class="thumbnails">
+                            <img src="./imag/escudo1.webp" alt="P2 Thumbnail A" onclick="changeImage('mainImage2', './imag/escudo1.webp')" loading="lazy">
+                            <img src="./imag/escudo2.webp" alt="P2 Thumbnail B" onclick="changeImage('mainImage2', './imag/escudo2.webp')" loading="lazy">
+                            <img src="./imag/escudo3.webp" alt="P2 Thumbnail B" onclick="changeImage('mainImage2', './imag/escudo3.webp')" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1>Escudo Cap. América</h1>
+                        <p class="price">u$ 599.50</p>
+                        <p>Tamaño real 1:1.</p>
+                        <a href="./pages/pages2/index2.html" target="top" class="btn-features" loading="lazy">Ver Características</a>
+                        <button onclick="addToCart({id: 2, name: 'Escudo Capitan América', price: 599.50, image: './imag/escudo1.webp'})">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!--  PRODUCTO 3 -->
+                <div class="product-card">
+                    <div class="gallery">
+                        <img src="./imag/espada1.jpg" alt="Imagen principal P3" class="main-image" id="mainImage3" loading="lazy">
+                        <div class="thumbnails">
+                             <img src="./imag/espada1.jpg" alt="P3 Thumbnail A" onclick="changeImage('mainImage3', './imag/espada1.jpg')" loading="lazy">
+                            <img src="./imag/espada4.jpg" alt="P3 Thumbnail B" onclick="changeImage('mainImage3', './imag/espada4.jpg')" loading="lazy">
+                            <img src="./imag/espada3.jpg" alt="P3 Thumbnail B" onclick="changeImage('mainImage3', './imag/espada3.jpg')" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1>Espada He-Man</h1>
+                        <p class="price">u$ 1200.00</p>
+                        <p>Escala Real 1:1.</p>
+                        <a href="./pages/pages3/index3.html" target="top" class="btn-features">Ver Características</a>
+                        <button onclick="addToCart({id: 3, name: 'Espada de Heman', price: 1200.00, image: './imag/espada1.jpg'})" loading="lazy">Añadir al Carrito</button>
+                    </div>
+                </div>
+                
+                <!-- PRODUCTO 4 -->
+                <div class="product-card">
+                    <div class="gallery">
+                        <img src="./imag/halo1.webp" alt="Imagen principal P4" class="main-image" id="mainImage4" loading="lazy">
+                        <div class="thumbnails">
+                             <img src="./imag/halo1.webp" alt="P4 Thumbnail A" onclick="changeImage('mainImage4', './imag/halo1.webp')" loading="lazy">
+                            <img src="./imag/halo2.webp" alt="P4 Thumbnail B" onclick="changeImage('mainImage4', './imag/halo2.webp')" loading="lazy">
+                            <img src="./imag/halo3.webp" alt="P4 Thumbnail B" onclick="changeImage('mainImage4', './imag/halo3.webp')" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1>Casco Halo </h1>
+                        <p class="price">u$ 850.00</p>
+                        <p>The Master Chief.</p>
+                        <a href="./pages/pages4/index4.html" target="top" class="btn-features">Ver Características</a>
+                        <button onclick="addToCart({id: 4, name: 'Casco Halo', price: 850.00, image: './imag/casco1.jpg'})">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <!-- PRODUCTO 5 -->
+                <div class="product-card">
+                    <div class="gallery">
+                        <img src="./imag/esfera1.jpeg" alt="Imagen principal P5" class="main-image" id="mainImage5" loading="lazy">
+                        <div class="thumbnails">
+                             <img src="./imag/esfera2.jpeg" alt="P5 Thumbnail A" onclick="changeImage('mainImage5', './imag/esfera2.jpeg')" loading="lazy">
+                            <img src="./imag/esfera3.jpeg" alt="P5 Thumbnail B" onclick="changeImage('mainImage5', './imag/esfera3.jpeg')" loading="lazy">
+                            <img src="./imag/esfera4.gif" alt="P5 Thumbnail B" onclick="changeImage('mainImage5', './imag/esfera4.gif')" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1>Esferas del Dragon </h1>
+                        <p class="price">u$ 650.00</p>
+                        <p>ACRÍLICO DURARERO.</p>
+                        <a href="./pages/pages5/index5.html" target="top" class="btn-features">Ver Características</a>
+                        <button onclick="addToCart({id: 5, name: 'Esferas del Dragon', price: 850.00, image: './imag/esfera4.gif'})">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <!--PRODUCTO 6 -->
+                <div class="product-card">
+                    <div class="gallery">
+                        <img src="./imag/daga1.jpg" alt="Imagen principal P6" class="main-image" id="mainImage6" loading="lazy">
+                        <div class="thumbnails">
+                             <img src="./imag/daga1.jpg" alt="P6 Thumbnail A" onclick="changeImage('mainImage6', './imag/daga1.jpg')" loading="lazy">
+                            <img src="./imag/daga2.jpg" alt="P6 Thumbnail B" onclick="changeImage('mainImage6', './imag/daga2.jpg')" loading="lazy">
+                            <img src="./imag/daga3.jpg" alt="P6 Thumbnail B" onclick="changeImage('mainImage6', './imag/daga3.jpg')" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1>Hoja Oculta  </h1>
+                        <p class="price">u$ 350.00</p>
+                        <p>Assassin´s Creed.</p>
+                        <a href="./pages/pages6/index6.html" target="top" class="btn-features">Ver Características</a>
+                        <button onclick="addToCart({id: 6, name: 'Hoja Oculta', price: 850.00, image: './imag/....'})">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- BENEFICIOS -->
+            <article>
+                <div class="articulo2-wrapper">
+                        <div class="beneficios-titulo">
+                            <img src="./imag/descuento.png" alt="logo" class="logo-beneficio" loading="lazy">
+                            <p><strong>Beneficios exlusivos</strong></p>
+                        </div>
+                        <br>
+                        <div class="beneficios-iconos">
+                            <img src="./imag/tarjetaicon.jpg" alt="medios" style="width: 25px;height:25px" loading="lazy">
+                            <p>Hasta 12 cuotas sin interés.</p>
+                            <br>
+                            <img src="./imag/envio.png" alt="envios" style="width: 25px;height:25px" loading="lazy"> 
+                            <p>Envíos gratis desde $ 50.000.</p>  
+                            <br>
+                            <img src="./imag/enviorapido.png" alt="enviosrapido" style="width: 25px;height:25px" loading="lazy"> 
+                            <p>Envíos en en el día !!</p> 
+
+                            <img src="./imag/creditos.png" alt="creditos" style="width: 25px;height:25px" loading="lazy"> 
+                            <p>Créditos a sola firma </p> 
+                        </div>              
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container" id="contacto">
+            <div class="footer-section">
+                <h3>Contacto y Ubicación</h3>
+                <p>Dirección: Calle Falsa 123, Buenos Aires</p>
+                <p>Teléfono: +54 11 1234 5678</p>
+                <p>Email: info@tiendaimportados.com</p>
+                <p>
+                <a href="#mapa" class="footer-map-link">
+                    <i><img src="./imag/localizacion.png" alt="mapa" loading="lazy"></i> Ver Ubicación en Mapa
+                </a>
+            </p>
+   
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos en Redes</h3>
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fa fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://publish.twitter.com" target="_blank" aria-label="twiter">
+                            <i class="fa fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>¡Beneficios!</h3>
+                <p>Haz clic en el botón de abajo para asociarte y disfrutar de promociones exclusivas.</p>
+                <a href="#formulario-contacto" class="btn-footer-promo">
+                    Asociarse Ahora
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Morr Sergio para Talento Tech. Todos los derechos reservados.</p>
+        </div>
+        
+    </footer>
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Ir arriba" aria-label="Ir arriba">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script src="scripst.js"></script> 
+</body>
+</html>
