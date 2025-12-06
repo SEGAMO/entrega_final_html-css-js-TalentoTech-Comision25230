@@ -3,7 +3,7 @@ body {
     margin: 5px; 
     line-height: 1.6; 
     /*background-color: rgb(235, 232, 232);*/
-    background-image: url("./imag/fondo_background.webp");
+    background-image: url("../imag/fondo_background.webp");
     
 }
 
@@ -114,4 +114,5 @@ img {
     border-color: #007bff;
 
 }
+
 
